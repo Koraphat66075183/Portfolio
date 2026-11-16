@@ -1,0 +1,99 @@
+/* นำเข้าฟอนต์ภาษาไทยจาก Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Prompt', sans-serif;
+}
+
+/* สไตล์การ์ดแบบกระจกใส (Glassmorphism) */
+.glass-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 30px rgba(14, 165, 233, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(14, 165, 233, 0.2);
+}
+
+/* ตกแต่งก้อนเมฆจำลองเป็นพื้นหลัง */
+.cloud {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.5;
+    z-index: 0;
+    animation: float 15s infinite ease-in-out alternate;
+}
+
+.cloud-1 {
+    width: 400px;
+    height: 400px;
+    top: -10%;
+    left: -10%;
+    background: #7dd3fc; /* สีฟ้าอ่อน */
+}
+
+.cloud-2 {
+    width: 500px;
+    height: 500px;
+    bottom: -15%;
+    right: -10%;
+    background: #bae6fd; 
+    animation-delay: -5s;
+}
+
+.cloud-3 {
+    width: 300px;
+    height: 300px;
+    top: 40%;
+    left: 40%;
+    background: #e0f2fe;
+    animation-delay: -10s;
+}
+
+/* อนิเมชันให้ก้อนเมฆขยับไปมา */
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(30px, 40px) scale(1.1); }
+}
+
+/* คลาสเริ่มต้นสำหรับสคริปต์ Fade-in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* รูปร่าง Blob ชั้นที่ 1 (พื้นหลังสีฟ้า) */
+.blob-shape-bg {
+    border-radius: 43% 57% 65% 35% / 40% 45% 55% 60%;
+}
+
+/* รูปร่าง Blob ชั้นที่ 2 (รูปภาพหลัก) */
+.blob-shape-fg {
+    border-radius: 50% 50% 45% 55% / 45% 55% 45% 55%;
+    /* หากใช้รูปภาพจริง ให้เปิด Comment ด้านล่างนี้ */
+    /* background-image: url('../assets/images/profile.png'); */
+    background-size: cover;
+    background-position: center;
+}
+
+/* แอนิเมชันให้กล่อง Badge ลอยขึ้นลงช้าๆ (เหมือนในเว็บสมัยใหม่) */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}

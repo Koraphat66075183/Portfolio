@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koraphat Saisangkachawalit | Portfolio</title>
+    
+    <!-- Google Fonts: Prompt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Prompt', 'sans-serif'],
+                    },
+                    colors: {
+                        sky: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f0f9ff; }
+        ::-webkit-scrollbar-thumb { background: #0ea5e9; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0284c7; }
+
+        /*  CSS สำหรับ Blob และ Animation */
+        .blob-shape-bg {
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        }
+        .blob-shape-fg {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-sky-50 antialiased selection:bg-sky-300 selection:text-sky-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-2xl font-bold text-sky-600 tracking-wider">KORAPHAT SAISANGKACHAWALIT</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="text-gray-600 hover:text-sky-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="#education" class="text-gray-600 hover:text-sky-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Education</a>
+                        <a href="#skills" class="text-gray-600 hover:text-sky-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a>
+                        <a href="#projects" class="text-gray-600 hover:text-sky-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a>
+                        <a href="#certificates" class="text-gray-600 hover:text-sky-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Certificates</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-sky-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-sky-100 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-sky-600 hover:bg-sky-50">About</a>
+                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-sky-600 hover:bg-sky-50">Education</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-sky-600 hover:bg-sky-50">Skills</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-sky-600 hover:bg-sky-50">Projects</a>
+                <a href="#certificates" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-sky-600 hover:bg-sky-50">Certificates</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-gradient-to-br from-sky-50 via-sky-100 to-white min-h-screen flex items-center">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-sky-200 opacity-50 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 rounded-full bg-sky-300 opacity-30 blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+                
+                <!-- Text Content (ซ้าย) -->
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <p class="text-sky-600 font-semibold tracking-wide uppercase text-sm lg:text-base mb-4">Welcome to my portfolio</p>
+                    <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl mb-6">
+                        <span class="block">KORAPHAT</span>
+                        <span class="block text-sky-500 mt-2">SAISANGKACHAWALIT</span>
+                    </h1>
+                    <p class="mt-3 max-w-md mx-auto md:mx-0 text-base text-gray-600 sm:text-lg md:mt-5 md:text-xl font-medium">
+                        4th-Year Computer Engineering Student
+                    </p>
+                    <div class="mt-10 max-w-sm mx-auto md:mx-0 sm:flex gap-4">
+                        <a href="#projects" class="flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-sky-500 hover:bg-sky-600 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto mb-4 sm:mb-0">
+                            View Projects
+                        </a>
+                        <a href="#about" class="flex items-center justify-center px-8 py-3 border-2 border-sky-500 text-base font-medium rounded-full text-sky-600 bg-transparent hover:bg-sky-50 transition-all duration-300 w-full sm:w-auto">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image Frame Blob Shape (ขวา) -->
+                <div class="w-full md:w-1/2 flex justify-center items-center relative mt-10 md:mt-0">
+                    <div class="relative w-72 h-72 md:w-96 md:h-96">
+                        <!-- ชั้นที่ 1: Blob พื้นหลัง -->
+                        <div class="absolute inset-0 bg-sky-300 blob-shape-bg transform translate-x-4 translate-y-6 md:translate-x-8 md:translate-y-8 z-0"></div>
+
+                        <!-- ชั้นที่ 2: Blob รูปภาพด้านหน้า -->
+                        <div class="absolute inset-0 bg-[#BFE2F9] border-8 border-white shadow-lg blob-shape-fg z-10 flex items-center justify-center overflow-hidden text-center">
+                            <!-- ใส่รูปภาพตรงนี้ -->
+                           <img src="assets/images/71411.jpg" alt="Profile Photo" class="w-full h-full object-cover">
+                        </div>
+
+                        <!-- ชั้นที่ 3: กล่องข้อความลอย -->
+                        <div class="absolute -bottom-4 -left-6 md:-bottom-8 md:-left-12 bg-white rounded-2xl py-3 px-4 shadow-xl flex items-center gap-3 z-20 animate-float border border-slate-50">
+                            <div class="bg-sky-100 p-2.5 rounded-full text-sky-500">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-[11px] text-slate-500 font-medium leading-none mb-1">Available for</p>
+                                <p class="text-sm font-bold text-slate-800 leading-none">Web & Mobile Dev</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">About Me</h2>
+                <div class="w-20 h-1 bg-sky-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+                <div class="lg:col-span-2 space-y-6 text-lg text-gray-600 leading-relaxed">
+                    <p>
+                        สวัสดีค่ะ ตอนนี้เป็นนักศึกษาชั้นปีที่ 4 สาขาวิศวกรรมคอมพิวเตอร์ ที่มีความมุ่งมั่นด้านการพัฒนา Web & Mobile Application และการประยุกต์ใช้ Generative AI มีประสบการณ์จากการทำโปรเจกต์จริงที่ช่วยเสริมสร้างทักษะการแก้ปัญหาอย่างเป็นระบบและการทำงานเป็นทีม พร้อมเรียนรู้สิ่งใหม่จากทีมงานผู้เชี่ยวชาญ และพร้อมนำทักษะทางเทคโนโลยีมาช่วยขับเคลื่อนโปรเจกต์ขององค์กรให้บรรลุเป้าหมาย
+                    </p>
+                    <div class="p-6 bg-sky-50 rounded-2xl border border-sky-100 shadow-sm relative">
+                        <i class="fas fa-quote-left text-3xl text-sky-200 absolute top-4 left-4"></i>
+                        <h3 class="text-xl font-semibold text-sky-900 mb-2 relative z-10 pl-8">Unique Selling Point</h3>
+                        <p class="text-gray-700 relative z-10 pl-8">
+                            "ผสานความเชี่ยวชาญทั้ง Full-Stack Development, การเชื่อมต่อฮาร์ดแวร์ IoT และ AI (Computer Vision & Generative AI) เข้าด้วยกัน เพื่อสร้างสรรค์นวัตกรรมที่แก้ปัญหาได้จริงตั้งแต่ต้นน้ำจนถึงปลายน้ำ"
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6">Contact Info</h3>
+                    <div class="space-y-5">
+                        <a href="mailto:Koraphat.saisang@gmail.com" class="flex items-center group">
+                            <div class="w-12 h-12 rounded-full bg-sky-100 flex items-center justify-center text-sky-500 group-hover:bg-sky-500 group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <span class="ml-4 text-gray-600 group-hover:text-sky-600 transition-colors truncate">Koraphat.saisang@gmail.com</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/koraphat-saisang" target="_blank" class="flex items-center group">
+                            <div class="w-12 h-12 rounded-full bg-sky-100 flex items-center justify-center text-sky-500 group-hover:bg-sky-500 group-hover:text-white transition-colors duration-300">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </div>
+                            <span class="ml-4 text-gray-600 group-hover:text-sky-600 transition-colors">LinkedIn Profile</span>
+                        </a>
+                        <a href="https://github.com/Koraphat66075183" target="_blank" class="flex items-center group">
+                            <div class="w-12 h-12 rounded-full bg-sky-100 flex items-center justify-center text-sky-500 group-hover:bg-sky-500 group-hover:text-white transition-colors duration-300">
+                                <i class="fab fa-github text-xl"></i>
+                            </div>
+                            <span class="ml-4 text-gray-600 group-hover:text-sky-600 transition-colors">GitHub Profile</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Education Section -->
+    <section id="education" class="py-20 bg-sky-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Education</h2>
+                <div class="w-20 h-1 bg-sky-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- University -->
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden border-l-4 border-sky-500 flex justify-between items-start gap-4">
+                    <!-- ข้อมูล (ฝั่งซ้าย) -->
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900">มหาวิทยาลัยศรีปทุม</h3>
+                        <p class="text-base sm:text-lg text-sky-600 font-medium mt-1">สาขาวิศวกรรมคอมพิวเตอร์ คณะเทคโนโลยีสารสนเทศ</p>
+                        <div class="mt-4 inline-block bg-sky-100 px-4 py-2 rounded-full text-sky-800 font-semibold text-sm sm:text-base">
+                            GPAX: 3.44
+                        </div>
+                    </div>
+                    <!-- ตราสัญลักษณ์ (ฝั่งขวา) -->
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
+                        <img src="assets/icon/Logo_SPU.svg.png" alt="SPU Logo" class="w-full h-full object-contain">
+                    </div>
+                </div> 
+
+                <!-- High School -->
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow relative overflow-hidden border-l-4 border-sky-400 flex justify-between items-start gap-4">
+                    <!-- ข้อมูล (ฝั่งซ้าย) -->
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900">โรงเรียนอุดมสิทธิศึกษา</h3>
+                        <p class="text-base sm:text-lg text-sky-600 font-medium mt-1">มัธยมศึกษาตอนปลาย (วิทย์ - คณิต)</p>
+                        <div class="mt-4 inline-block bg-sky-100 px-4 py-2 rounded-full text-sky-800 font-semibold text-sm sm:text-base">
+                            GPAX: 3.95
+                        </div>
+                    </div>
+                    <!-- ตราสัญลักษณ์ (ฝั่งขวา) -->
+                    <div class="w-20 h-20 sm:w-20 sm:h-20 flex-shrink-0">
+                        <img src="assets/images/tra_udss.png" alt="High School Logo" class="w-full h-full object-contain">
+                    </div>
+                </div> <!-- ปิด div กรอบโรงเรียนตรงนี้ -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Skills</h2>
+                <div class="w-20 h-1 bg-sky-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <!-- Hard Skills -->
+                <div class="bg-sky-50/50 p-8 rounded-3xl border border-sky-100">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-laptop-code text-2xl text-sky-500 mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-900">Hard Skills</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-white border border-sky-200 text-sky-700 rounded-full text-sm font-medium shadow-sm hover:bg-sky-500 hover:text-white transition-colors cursor-default">React Native & Expo</span>
+                        <span class="px-4 py-2 bg-white border border-sky-200 text-sky-700 rounded-full text-sm font-medium shadow-sm hover:bg-sky-500 hover:text-white transition-colors cursor-default">Python (FastAPI, OpenCV)</span>
+                        <span class="px-4 py-2 bg-white border border-sky-200 text-sky-700 rounded-full text-sm font-medium shadow-sm hover:bg-sky-500 hover:text-white transition-colors cursor-default">PHP & MySQL/MariaDB</span>
+                        <span class="px-4 py-2 bg-white border border-sky-200 text-sky-700 rounded-full text-sm font-medium shadow-sm hover:bg-sky-500 hover:text-white transition-colors cursor-default">Tailwind CSS</span>
+                        <span class="px-4 py-2 bg-white border border-sky-200 text-sky-700 rounded-full text-sm font-medium shadow-sm hover:bg-sky-500 hover:text-white transition-colors cursor-default">AWS (Bedrock, SageMaker)</span>
+                        <span class="px-4 py-2 bg-white border border-sky-200 text-sky-700 rounded-full text-sm font-medium shadow-sm hover:bg-sky-500 hover:text-white transition-colors cursor-default">Figma UI/UX</span>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="bg-sky-50/50 p-8 rounded-3xl border border-sky-100">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-users text-2xl text-sky-500 mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-900">Soft Skills</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-sky-500 text-white rounded-full text-sm font-medium shadow-sm hover:bg-sky-600 transition-colors cursor-default">Systematic Problem Solving</span>
+                        <span class="px-4 py-2 bg-sky-500 text-white rounded-full text-sm font-medium shadow-sm hover:bg-sky-600 transition-colors cursor-default">Team Collaboration</span>
+                        <span class="px-4 py-2 bg-sky-500 text-white rounded-full text-sm font-medium shadow-sm hover:bg-sky-600 transition-colors cursor-default">Fast Learner & Adaptability</span>
+                        <span class="px-4 py-2 bg-sky-500 text-white rounded-full text-sm font-medium shadow-sm hover:bg-sky-600 transition-colors cursor-default">Active Listening (English/Thai)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-sky-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Featured Projects</h2>
+                <div class="w-20 h-1 bg-sky-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div class="h-48 bg-sky-200 overflow-hidden relative bg-black">
+                    <video 
+                        src="assets/videos/H2O1-demo.mp4" 
+                         autoplay 
+                        loop 
+                        muted 
+                        playsinline 
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                        ></video>
+                </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">H2O</h3>
+                        <p class="text-gray-600 text-sm flex-1 leading-relaxed">
+                            ระบบสั่งน้ำและมอนิเตอร์ด้วย IoT รันเซิร์ฟเวอร์บนบอร์ด Raspberry Pi โดยใช้ Nginx, PHP และ MariaDB ทำงานร่วมกับเซนเซอร์ผ่านบอร์ด ESP32
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="text-xs font-semibold px-2 py-1 bg-sky-100 text-sky-700 rounded-md">IoT</span>
+                            <span class="text-xs font-semibold px-2 py-1 bg-sky-100 text-sky-700 rounded-md">Raspberry Pi</span>
+                            <span class="text-xs font-semibold px-2 py-1 bg-sky-100 text-sky-700 rounded-md">PHP/MariaDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div class="h-48 bg-sky-200 overflow-hidden relative">
+                        <img src="assets/images/project/CodePOP3.png" alt="CodePOP Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">CodePOP</h3>
+                        <p class="text-gray-600 text-sm flex-1 leading-relaxed">
+                            แอปพลิเคชันรูปแบบเกม (Gamified Micro-learning) พัฒนาด้วย TypeScript และ Gluestack UI เพื่อส่งเสริมการเรียนรู้พื้นฐานการเขียนโค้ดให้สนุกและเข้าใจง่าย
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="text-xs font-semibold px-2 py-1 bg-sky-100 text-sky-700 rounded-md">TypeScript</span>
+                            <span class="text-xs font-semibold px-2 py-1 bg-sky-100 text-sky-700 rounded-md">Gluestack UI</span>
+                            <span class="text-xs font-semibold px-2 py-1 bg-sky-100 text-sky-700 rounded-md">Mobile App</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div class="h-48 bg-sky-200 overflow-hidden relative">
+                        <img src="assets/images/project/car1 (1).jpg" alt="รถสองล้อ Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">รถสองล้อ</h3>
+                        <p class="text-gray-600 text-sm flex-1 leading-relaxed">
+                            การออกแบบและการประกอบระบบ Robot Following Line ด้วยการใช้ IC gate, IR sensors, Op-Amp, และ Drive Motor 
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="text-xs font-semibold px-2 py-1 bg-sky-100 text-sky-700 rounded-md">TypeScript</span>
+                            <span class="text-xs font-semibold px-2 py-1 bg-sky-100 text-sky-700 rounded-md">Gluestack UI</span>
+                            <span class="text-xs font-semibold px-2 py-1 bg-sky-100 text-sky-700 rounded-md">Mobile App</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div class="h-48 bg-sky-200 overflow-hidden relative bg-black">
+                    <video 
+                        src="assets/Videos/Screen1.mp4" 
+                         autoplay 
+                        loop 
+                        muted 
+                        playsinline 
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                        ></video>
+                </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Smart Zoom Assist</h3>
+                        <p class="text-gray-600 text-sm flex-1 leading-relaxed">
+                            ระบบห้องเรียนอัจฉริยะบนเว็บแอปพลิเคชัน ประยุกต์ใช้โมเดล YOLOv8, การจับภาพหน้าจอ, สตรีมมิงผ่าน WebRTC และระบบจัดการข้อมูลด้วย PHP/MySQL
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="text-xs font-semibold px-2 py-1 bg-sky-100 text-sky-700 rounded-md">IoT</span>
+                            <span class="text-xs font-semibold px-2 py-1 bg-sky-100 text-sky-700 rounded-md">Raspberry Pi</span>
+                            <span class="text-xs font-semibold px-2 py-1 bg-sky-100 text-sky-700 rounded-md">PHP/MariaDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col">
+                    <div class="h-48 bg-sky-200 overflow-hidden relative">
+                        <img src="assets/images/project/med1.jpg" alt="MedCheck-Vision" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">MedCheck-Vision</h3>
+                        <p class="text-gray-600 text-sm flex-1 leading-relaxed">
+                            ระบบตรวจสอบการจ่ายยาอัตโนมัติ ผสานการทำงานระหว่างการสแกนคิวอาร์โค้ด แพลตฟอร์ม CiRA CORE และระบบหลังบ้านที่เขียนด้วย Python FastAPI พร้อมบันทึกข้อมูลลงฐานข้อมูล SQLite
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="text-xs font-semibold px-2 py-1 bg-sky-100 text-sky-700 rounded-md">Python FastAPI</span>
+                            <span class="text-xs font-semibold px-2 py-1 bg-sky-100 text-sky-700 rounded-md">CiRA CORE</span>
+                            <span class="text-xs font-semibold px-2 py-1 bg-sky-100 text-sky-700 rounded-md">SQLite</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Certificates</h2>
+                <div class="w-20 h-1 bg-sky-500 mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-gray-600">การอบรมที่ผ่านมา</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Cert 1 -->
+                <div class="group text-center">
+                    <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-sky-50 mb-4 bg-sky-50 aspect-[4/3] flex items-center justify-center p-2">
+                        <img src="assets/images/certifications/AI_Companion.jpg" alt="Certificate" class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h4 class="font-medium text-gray-800">เพื่อน AI คู่คิด : คู่ใจสายครีเอทีฟ</h4>
+                </div>
+                
+                <!-- Cert 2 -->
+                <div class="group text-center">
+                    <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-sky-50 mb-4 bg-sky-50 aspect-[4/3] flex items-center justify-center p-2">
+                        <img src="assets/images/certifications/cer2.png" alt="Certificate" class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h4 class="font-medium text-gray-800">เพื่อน AI คู่คิด : ร่วมเรียน ร่วมสร้าง ร่วมพัฒนาอย่างมืออาชีพ</h4>
+                </div>
+
+                <!-- Cert 3 -->
+                <div class="group text-center">
+                    <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-sky-50 mb-4 bg-sky-50 aspect-[4/3] flex items-center justify-center p-2">
+                        <img src="assets/images/certifications/CER3.jpg" alt="Certificate" class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h4 class="font-medium text-gray-800">ชื่อประกาศนียบัตร / Certificate Name</h4>
+                </div>
+
+                <!-- Cert 4 -->
+                <div class="group text-center">
+                    <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-sky-50 mb-4 bg-sky-50 aspect-[4/3] flex items-center justify-center p-2">
+                        <img src="assets/images/certifications/HCIA-IoT V3.0 Course.png" alt="Certificate" class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h4 class="font-medium text-gray-800">HUAWEI ICT ACADEMY HCIA-IoT V3.0 Course</h4>
+                </div>
+
+                <!-- Cert 5 -->
+                <div class="group text-center"> 
+                    <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-sky-50 mb-4 bg-sky-50 aspect-[4/3] flex items-center justify-center p-2">
+                        <img src="assets/images/certifications/cer5.png" alt="Certificate" class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h4 class="font-medium text-gray-800">AWS Generative AI Foundation Program including Party Rock Challenge</h4>
+                </div>
+
+                <!-- Cert 6 -->
+                <div class="group text-center">
+                    <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-sky-50 mb-4 bg-sky-50 aspect-[4/3] flex items-center justify-center p-2">
+                        <img src="assets/images/certifications/cer6.png" alt="Certificate" class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h4 class="font-medium text-gray-800">AWS Academy Graduate - Machine Learning Foundations - Training Badge</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-sky-900 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="mailto:Koraphat.saisang@gmail.com" class="text-sky-300 hover:text-white transition-colors">
+                    <i class="fas fa-envelope text-2xl"></i>
+                    <span class="sr-only">Email</span>
+                </a>
+                <a href="https://www.linkedin.com/in/koraphat-saisang" target="_blank" class="text-sky-300 hover:text-white transition-colors">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                    <span class="sr-only">LinkedIn</span>
+                </a>
+                <a href="https://github.com/Koraphat66075183" target="_blank" class="text-sky-300 hover:text-white transition-colors">
+                    <i class="fab fa-github text-2xl"></i>
+                    <span class="sr-only">GitHub</span>
+                </a>
+            </div>
+            <p class="text-sky-200 text-sm">
+                &copy; 2024 Koraphat Saisangkachawalit. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Simple Script for Mobile Menu -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
